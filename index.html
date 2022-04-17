@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rgb Color generator</title>
+    <style media="screen">
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+.main{
+  height: 400px;
+  width: 250px;
+  background: rgb(41, 37, 37);  
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-family: verdana;
+  border-radius: 25px;
+  box-shadow: 8px 6px 5px black;
+  margin-top: -40px;
+}
+.main input{
+    font-size: 15px;
+    font-weight: bold;
+}
+#box{
+    height: 35px;
+    width: 180px;
+    border-radius: 25px;
+    text-align: center;
+    outline: none;
+    border: none;
+
+}
+input[type="range"]{
+    -webkit-appearance: none;
+    height: 10px;
+    width: 180px;
+    border-radius: 50px;
+    outline: none;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.main #red{
+    background: linear-gradient(90deg,#000,red);
+}
+.main #green{
+    background: linear-gradient(90deg,#000,green);
+}
+.main #blue{
+    background: linear-gradient(90deg,#000,blue);
+}
+h2{
+    color: #000;
+    font-family: verdana;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px black;
+}
+span{
+    color: #000;
+    font-size: 15px;
+    text-align: center;
+    font-family: verdana;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-top: -70px;
+    text-shadow: 2px 2px 6px black;
+}
+    </style>
+    <h2>RGB Color Generator Using</h2>
+    <span>By Arvind Kathare</span>
+</head>
+<body>
+    <div class="main">
+        Result: <input type="text" id="box" value="rgb(255,255,255)">
+        Red: <input type="range" id="red" value="255" min="0" max="255">
+        Green: <input type="range" id="green" value="255" min="0" max="255">
+        Blue: <input type="range" id="blue" value="255" min="0" max="255">
+        
+    </div>
+    <script type="text/javascript">
+function myColor(){
+    var red = document.getElementById('red').value;
+    var green = document.getElementById('green').value;
+    var blue = document.getElementById('blue').value;
+    var color = 'rgb('+ red +','+ green +','+ blue +')';
+    document.body.style.backgroundColor = color;
+    document.getElementById('box').value = color;
+}
+document.getElementById('red').addEventListener('input',myColor);
+document.getElementById('green').addEventListener('input',myColor);
+document.getElementById('blue').addEventListener('input',myColor);
+    </script>
+</body>
+</html>
